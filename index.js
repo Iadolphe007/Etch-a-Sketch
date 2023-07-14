@@ -1,20 +1,11 @@
-const DEFAULT_COLOR = '#ffffff'
-const DEFAULT_MODE = 'color'
+const DEFAULT_COLOR = '#000000'
+const DEFAULT_MODE = 'black'
 const DEFAULT_SIZE = 20
 
 let currentColor = DEFAULT_COLOR
 let currentMode = DEFAULT_MODE
 let currentSize = DEFAULT_SIZE
 
-
-const blackBtn = document.getElementById('black-btn')
-const rainBtn = document.getElementById('rain-btn')
-const eraseBtn = document.getElementById('erase-btn')
-const resetBtn = document.getElementById('reset-btn')
-const colorInput = document.getElementById('color-input')
-const sizeInput = document.getElementById('range-input')
-const sizeValue = document.getElementById('range-value')
-const grid = document.getElementById('grid-sec')
 
 
 function setCurrentColor(newColor) {
@@ -30,7 +21,18 @@ function setCurrentSize(newSize) {
     currentSize = newSize
 }
 
-blackBtn.onclick = () => setCurrentColor('#ffffff')
+const blackBtn = document.getElementById('black-btn')
+const rainBtn = document.getElementById('rain-btn')
+const eraseBtn = document.getElementById('erase-btn')
+const resetBtn = document.getElementById('reset-btn')
+const colorInput = document.getElementById('color-input')
+const sizeInput = document.getElementById('range-input')
+const sizeValue = document.getElementById('range-value')
+const grid = document.getElementById('grid-sec')
+
+
+
+blackBtn.onclick = () => setCurrentColor('#000000')
 rainBtn.onclick = () => setCurrentMode('rainbow')
 eraseBtn.onlick = () => setCurrentMode('erase')
 resetBtn.onclick = () => cleanAll()
@@ -54,7 +56,7 @@ function updateSize(value) {
 
 function cleanAll(){
     clearGrid()
-    setGrid()
+    setGrid(currentSize)
 }
 
 function clearGrid() {
@@ -65,7 +67,7 @@ function setGrid(size){
     grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`
     grid.style.gridTemplateRows = `repeat(${size}, 1fr)`
 
-    for (let i = 0; i < size * size; i++){
+    for(let i = 0; i < size * size; i++){
         const gridElement = document.createElement('div')
         gridElement.classList.add('grid-element')
         gridElement.addEventListener('mouseover', changeColor)
@@ -75,7 +77,7 @@ function setGrid(size){
 }
 
 function changeColor(e){
-    if (e.type === 'mouseover' && !mouseDown) return
+    if(e.type === 'mouseover' && !mouseDown) return
     if(currentMode === 'rainbow'){
         const R = Math.floor(Math.random() * 256)
         const G = Math.floor(Math.random() * 256)
@@ -84,34 +86,28 @@ function changeColor(e){
     }else if(currentMode === 'black'){
         e.target.style.backgroundColor = currentColor
     }else if(currentMode === 'erase'){
-        e.target.style.backgroundColor = '#f5f5f5'
+        e.target.style.backgroundColor = '#add8e6'
     }
 }
 
 function activateButton(newMode) {
-    if (currentMode === 'rainbow') {
+    if(currentMode === 'rainbow') {
       rainBtn.classList.remove('active')
-    } else if (currentMode === 'black') {
+    } else if(currentMode === 'black') {
       blackBtn.classList.remove('active')
-    } else if (currentMode === 'erase') {
+    } else if(currentMode === 'erase') {
       eraseBtn.classList.remove('active')
     }
   
-    if (newMode === 'rainbow') {
+    if(newMode === 'rainbow') {
       rainBtn.classList.add('active')
-    } else if (newMode === 'black') {
+    } else if(newMode === 'black') {
       blackBtn.classList.add('active')
-    } else if (newMode === 'erase') {
+    } else if(newMode === 'erase') {
       eraseBtn.classList.add('active')
     }
 }
 
-// function resetAll(){
-//     const grids = document.querySelectorAll("#reset-btn")
-//     grids.forEach((grid) =>{
-//         write(grid, "while")
-//     })
-// }
 window.onload = () => {
     setGrid(DEFAULT_SIZE)
     activateButton(DEFAULT_MODE)
