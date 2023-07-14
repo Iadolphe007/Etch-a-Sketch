@@ -13,19 +13,19 @@
     </div>
     <div class="data">
         <div class="adj_section">
-            <button>Black</button>
-            <button>Rainbow</button>
-            <button>Gray</button>
-            <button>Erase</button>
-            <button>Reset</button>
+            <button id="black-btn">Black</button>
+            <button id="rain-btn">Rainbow</button>
+            <button id="gary-btn">Gray</button>
+            <button id="erase-btn">Erase</button>
+            <button id="reset-btn">Reset</button>
             <h4>choose different color</h4>
-            <input type="color" value="#333333">
+            <input type="color" value="#333333" id="color-input">
             <h4>Adjust grid size</h4>
-            <input type="range" value="24" min="2" max="100" id="range-slider"
+            <input type="range" value="24" min="2" max="100" id="range-input"
             onmousemove="rangeSliderValue(this.value)" onChange="rangeSlider(this.value)">
              
         </div>
-        <div class="input_section"></div>
+        <div class="input_section" id="input-sec"></div>
     </div>
 </body>
 </html>
