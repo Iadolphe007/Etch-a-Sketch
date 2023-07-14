@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="index.js" defer></script>
-    <title>Etch-a-Sketch</title>
+    <title>Etch-A-Sketch</title>
 </head>
 <body>
     <div class="title">
@@ -15,17 +15,17 @@
         <div class="adj_section">
             <button id="black-btn">Black</button>
             <button id="rain-btn">Rainbow</button>
-            <button id="gary-btn">Gray</button>
             <button id="erase-btn">Erase</button>
             <button id="reset-btn">Reset</button>
             <h4>choose different color</h4>
             <input type="color" value="#333333" id="color-input">
             <h4>Adjust grid size</h4>
-            <input type="range" value="24" min="2" max="100" id="range-input"
-            onmousemove="rangeSliderValue(this.value)" onChange="rangeSlider(this.value)">
+            <div id="range-value" class="size-value">16 x 16</div>
+            <input type="range" value="24" min="2" max="100" id="range-input">
+            <!-- onmousemove="rangeSliderValue(this.value)" onChange="rangeSlider(this.value)" -->
              
         </div>
-        <div class="input_section" id="input-sec"></div>
+        <div class="input_section" id="grid-sec"></div>
     </div>
 </body>
 </html>

@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    background-color: lightblue;
+    background-color: #add8e6;
 }
 
 .title{
@@ -40,12 +40,17 @@ button {
     color: white;
 }
 button.active {
-    background-color: black
+    background-color: black;
     color: red
   }
 button:hover{
     background-color: black;
     color: red;
+}
+
+.size-value{
+    margin-top: 7px;
+    background-color: #c1c1fb;
 }
 
 .input_section{
@@ -54,6 +59,7 @@ button:hover{
     margin-left: 30px;
     box-shadow: rgba(0, 0, 0, 0.54) 0px 10px 20px;
     display: grid;
+    grid-gap: 16px;
     background-color: whitesmoke
 }
 
@@ -65,7 +71,7 @@ input[type='color'] {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 input[type='range']{
-    width: 120px;
+    width: 160px;
     height: 3px;
     color: blue;
     margin-top: 10px;
