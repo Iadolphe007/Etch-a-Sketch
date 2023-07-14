@@ -8,22 +8,24 @@
     <title>Etch-a-Sketch</title>
 </head>
 <body>
-    <div>
-        <h2>Etch-a-Sketch</h2>
+    <div class="title">
+        <h1>Etch-A-Sketch</h1>
     </div>
-    <div class="input_section"></div>
-    <div class="adj_section">
-        <button>Black</button>
-        <button>RainBow</button>
-        <button>Gray</button>
-        <button>choose color</button>
-        <button>Erase</button>
-        <button>Reset</button>
-    </div>
-    <div class="slide">
-        <h4>Adjust grid size</h4>
-        <input type="range" value="24" min="1" max="60" id="range-slider"
-                    onmousemove="rangeSliderValue(this.value)" onChange="rangeSlider(this.value)">
+    <div class="data">
+        <div class="adj_section">
+            <button>Black</button>
+            <button>Rainbow</button>
+            <button>Gray</button>
+            <button>Erase</button>
+            <button>Reset</button>
+            <h4>choose different color</h4>
+            <input type="color" value="#333333">
+            <h4>Adjust grid size</h4>
+            <input type="range" value="24" min="2" max="100" id="range-slider"
+            onmousemove="rangeSliderValue(this.value)" onChange="rangeSlider(this.value)">
+             
+        </div>
+        <div class="input_section"></div>
     </div>
 </body>
 </html>
